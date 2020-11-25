@@ -18,6 +18,7 @@ h3 {
   letter-spacing: normal;
   @include Rubik_400;
   @include normal-text;
+ 
 }
 
 h2 {
@@ -40,6 +41,7 @@ h1 {
   line-height: 52px;
   letter-spacing: -0.8px;
   text-transform: capitalize;
+  padding: 0 $arrow-margin;
 
   &.slider {
     color: $color-white;
@@ -53,6 +55,9 @@ h1 {
   background-color: $color-white;
   padding-top: 40px;
   margin: 0px 10px 15px 10px;
+  @include max400px {
+    margin:0 0 15px 0;
+  }
   flex-shrink: 0;
   position: relative;
 }
@@ -87,6 +92,7 @@ h1 {
   letter-spacing: normal;
   max-width: 260px;
   word-wrap:break-word;
+  //animation: fadeIn 300ms ease-in-out 1s both;
 }
 
 

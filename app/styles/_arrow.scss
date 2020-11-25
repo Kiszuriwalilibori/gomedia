@@ -4,6 +4,7 @@
   top: 0;
   display: flex;
   align-items: center;
+  z-index:2000;
 
   &.arrow-section--left {
     left: 0;
@@ -19,8 +20,10 @@
 
   &.arrow--right {
     margin-right: $arrow-margin;
+    @include max400px{ margin-right: $arrow-margin-small;}
   }
   &.arrow--left {
     margin-left: $arrow-margin;
+    @include max400px{ margin-left: $arrow-margin-small;}
   }
 }

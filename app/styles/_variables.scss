@@ -9,6 +9,7 @@ $color-blue-dark:#215398;
 
 $image-height:228px;
 $arrow-margin:11px;
+$arrow-margin-small:1px;
 
 @mixin Rubik_400 {
   font-family: Rubik;
@@ -35,14 +36,17 @@ $arrow-margin:11px;
     align-items: center;
 }
 
-
-
 @mixin min1170px {
     @media (min-width: 1170px)  {
         @content;
     }
 }
-  
+
+@mixin max400px {
+  @media (max-width: 400px)  {
+      @content;
+  }
+}  
 
 .section-layout{
   width:100%;
@@ -53,3 +57,5 @@ $arrow-margin:11px;
   width: 100%;
   max-width: 1170px;
 }
+
+@keyframes fadeIn{from{opacity:0}to{opacity:1}}

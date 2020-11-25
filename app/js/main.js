@@ -2,15 +2,16 @@ const debounce = require("lodash/debounce");
 const templatePolyfill = require("template-polyfill");
 
 const testArray = [
-  { heading: "test", content: "test" },
+  { heading: "heading", content: "Lorem ipsum dolor sit amet" },
   { heading: "heading", content: "Lorem ipsum dolor sit amet, consect etur adipiscing elit. Aenea uismod bibentum laoreet. Proin gravida dolor sit amet lacus." },
   { heading: "ultra mega super long heading", content: "Lorem ipsum dolor sit amet, consect etur adipiscing elit. Aenea uismod bibentum laoreet. Lorem ipsum dolor sit amet." },
-  { heading: "test", content: "test" },
-  { heading: "dupa", content: "biskupa" },
+  { heading: "heading4", content: "testLorem ipsum dolor sit amet, consect etur adipiscing elit" },
+  { heading: "heading5", content: "Aenea uismod bibentum laoreet. Proin gravida dolor sit amet lacus." },
 ];
 
 const slideNode = document.getElementById("slides-container");
 const staticNode = document.getElementById("static-container");
+
 var index = 0;
 var currentSlidesCount = slidesCount();
 
@@ -44,7 +45,7 @@ function slidesCount() {
   if (window.matchMedia("(min-width: 768px) and (max-width: 1199px)").matches) {
     count = 2;
   }
-  if (window.matchMedia("(min-width: 370px) and (max-width: 768px)").matches) {
+  if (window.matchMedia("(min-width: 350px) and (max-width: 768px)").matches) {
     count = 1;
   }
   return count;
@@ -72,7 +73,7 @@ function appendContent(ary, slidesHook, contentHook) {
   }
 
   ary.slice.forEach(function(element, index){
-    
+
     console.log(content, "content");
     content.querySelector("h3").textContent = element.heading;
     content.querySelector(".h3-text").textContent = element.content;
