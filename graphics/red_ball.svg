@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 30 30" width="30" height="30">
+        <style>
+            tspan { white-space:pre }
+            .shp0 { fill: #ff3859 } 
+        </style>
+        <g id="CONTENT1">
+            <path id="dot" class="shp0" d="M15 0C23.28 0 30 6.72 30 15C30 23.28 23.28 30 15 30C6.72 30 0 23.28 0 15C0 6.72 6.72 0 15 0Z" />
+        </g>
+    </svg>

@@ -1,0 +1,55 @@
+$color-dark :#2d3236;
+$color-grey-dark :#808080;
+$color-grey :#b3b3b3;
+$color-grey-light :#d8d8d8;
+$color-white:#ffffff;
+$color-whitish:#f5f5f5;
+$color-blue:#28a9e0;
+$color-blue-dark:#215398;
+
+$image-height:228px;
+$arrow-margin:11px;
+
+@mixin Rubik_400 {
+  font-family: Rubik;
+  font-weight: 400;
+}
+
+@mixin Rubik_300 {
+  font-family: Rubik;
+  font-weight: 300;
+}
+
+@mixin normal-text {
+  font-style: normal;
+  font-style: normal;
+  text-align: center;
+}
+
+
+
+@mixin flex-column{
+    display:flex;
+    flex-direction: column;
+    justify-content:flex-start;
+    align-items: center;
+}
+
+
+
+@mixin min1170px {
+    @media (min-width: 1170px)  {
+        @content;
+    }
+}
+  
+
+.section-layout{
+  width:100%;
+ @include flex-column;
+}
+
+@mixin fullBut1170{
+  width: 100%;
+  max-width: 1170px;
+}

@@ -1,0 +1,26 @@
+.arrow-section {
+  height: 100%;
+  position: absolute;
+  top: 0;
+  display: flex;
+  align-items: center;
+
+  &.arrow-section--left {
+    left: 0;
+  }
+
+  &.arrow-section--right {
+    right: 0;
+  }
+}
+
+.arrow {
+  cursor: pointer;
+
+  &.arrow--right {
+    margin-right: $arrow-margin;
+  }
+  &.arrow--left {
+    margin-left: $arrow-margin;
+  }
+}
