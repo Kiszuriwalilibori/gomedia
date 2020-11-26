@@ -60,7 +60,7 @@ function removeAllChildNodes(parent) {
 function appendContent(ary, slidesHook, contentHook) {
   
   var content = document.querySelector("#slide-template").content;
-
+  
   slidesHook.style.visibility = "hidden";
   contentHook.style.visibility = "hidden";
   removeAllChildNodes(slidesHook);
@@ -68,32 +68,62 @@ function appendContent(ary, slidesHook, contentHook) {
   
 
   if (ary.pre) {
-    const content = document.querySelector("#left-arrow").content;
+    const content = document.querySelector("#left-arrow-template").content;
     slidesHook.appendChild(document.importNode(content, true));
   }
 
   ary.slice.forEach(function(element, index){
 
-    console.log(content, "content");
     content.querySelector("h3").textContent = element.heading;
     content.querySelector(".h3-text").textContent = element.content;
-
-    content.querySelector("h3").id = 'slide_'+ index +'_header';
-    content.querySelector('article').setAttribute('aria-labelledby','slide_'+ index +'_header');
-    content.querySelector(".h3-text").id = 'slide_' + index + '_description';
-    content.querySelector('article').setAttribute('aria-describedby','slide_'+ index +'_description');
+    
+    const slideID = 'slide_'+ index +'_header';
+    const slideDesc = 'slide_'+ index +'_description';
+    const slide = 'slide_'+ index;
+    
+    
+    content.querySelector("h3").id = slideID;
+    content.querySelector('article').setAttribute('aria-labelledby',slideID);
+    content.querySelector('article').id = slide;
+    content.querySelector(".h3-text").id = slideDesc;
+    content.querySelector('article').setAttribute('aria-describedby',slideDesc);
     slidesHook.appendChild(document.importNode(content, true));
 
-    content.querySelector("h3").id = 'content_'+ index +'_header';
-    content.querySelector('article').setAttribute('aria-labelledby','content_'+ index +'_header');
-    content.querySelector(".h3-text").id = 'content_' + index + '_description';
-    content.querySelector('article').setAttribute('aria-describedby','content_'+ index +'_description');
+    const descHeight = document.getElementById(slideDesc).offsetHeight;
+    const headerHeight = document.getElementById(slideID).offsetHeight;
+    const slideHeight = document.getElementById(slide).clientHeight;
+    const slidePaddingTop = parseFloat(window.getComputedStyle(document.getElementById('slide_'+index), null).getPropertyValue('padding-top'));
+    const spaceForImageAvailable = slideHeight -(2*slidePaddingTop + headerHeight + descHeight ) >52;
+    
+
+    if (spaceForImageAvailable){
+      const filler = document.getElementById(slide).querySelector('img');
+      filler.src = "./graphics/wp.svg";
+      filler.alt = 'wp logo';
+    }
+ 
+    const contentSlideID = 'content_'+ index +'_header';
+    const contentSlideDesc = 'content_'+ index +'_description';
+    const contentSlide = 'content_'+ index;
+
+    content.querySelector("h3").id = contentSlideID;
+    content.querySelector('article').setAttribute('aria-labelledby',contentSlideID);
+    content.querySelector(".h3-text").id = contentSlideDesc;
+    content.querySelector('article').id = contentSlide;
+    content.querySelector('article').setAttribute('aria-describedby',contentSlideDesc);
 
     contentHook.appendChild(document.importNode(content, true));
+    if (spaceForImageAvailable){
+      const filler = document.getElementById(contentSlide).querySelector('img');
+      filler.src = "./graphics/g.svg";
+      filler.alt = 'g logo';
+    }
+
+
   });
 
   if (ary.post) {
-    const content = document.querySelector("#right-arrow").content;
+    const content = document.querySelector("#right-arrow-template").content;
     slidesHook.appendChild(document.importNode(content, true));
   }
     slidesHook.style.visibility = "visible";

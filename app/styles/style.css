@@ -314,4 +314,8 @@ h1.slider {
   -webkit-transform: translateY(50%);
           transform: translateY(50%);
 }
+
+.filler-image {
+  margin-top: 10px;
+}
 /*# sourceMappingURL=style.css.map */

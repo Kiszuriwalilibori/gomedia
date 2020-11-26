@@ -22,13 +22,10 @@
  
 
 - 1 (initial)
+- 2 Added images for semi-filled cards
 
 ### To do
 
--check all
--check 360px
--class for fadein
--possibly slide could move a little when rehydrated
 
 ### Comments
 
