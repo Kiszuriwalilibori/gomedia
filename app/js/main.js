@@ -115,8 +115,8 @@ function appendContent(ary, slidesHook, contentHook) {
     contentHook.appendChild(document.importNode(content, true));
     if (spaceForImageAvailable){
       const filler = document.getElementById(contentSlide).querySelector('img');
-      filler.src = "./graphics/g.svg";
-      filler.alt = 'g logo';
+      filler.src = "./graphics/drupal.svg";
+      filler.alt = 'drupal logo';
     }
 
 
